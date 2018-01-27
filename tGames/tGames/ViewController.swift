@@ -10,16 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        games()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func games()
+    {
+        GamesManager.getGames { (games, error) in
+            if let list = games
+            {
+                print("-->> Games count: \(list.games.count)")
+            }
+            if let error = error
+            {
+                print("-->> Error get games: \(error)")
+            }
+        }
     }
-
-
 }
 
