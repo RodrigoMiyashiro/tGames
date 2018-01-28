@@ -14,18 +14,4 @@ extension UIViewController
     {
         self.title = title
     }
-    
-    func translucentNavigationBar()
-    {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-    }
-    
-    func notTranslucentNavigationBar()
-    {
-        self.navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = nil
-        self.navigationController?.navigationBar.isTranslucent = false
-    }
 }

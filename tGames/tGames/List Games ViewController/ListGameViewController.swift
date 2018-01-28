@@ -20,6 +20,7 @@ class ListGameViewController: CustomViewController
             listGameViewModel?.listGameDidChange = { [weak self] viewModel in
                 self?.refreshControl.endRefreshing()
                 self?.listGameCollectionView.reloadData()
+                Spinner.stopAnimating()
             }
         }
     }
@@ -43,10 +44,13 @@ class ListGameViewController: CustomViewController
     
     @objc private func getGames()
     {
+        Spinner.show(view: self.view)
         listGameViewModel?.getGames(completion: { (error) in
             if let error = error
             {
                 print("-->> Error get games [VC]: \(error)")
+                self.present(Alert.show(message: error.localizedDescription), animated: true, completion: nil)
+                Spinner.stopAnimating()
                 self.refreshControl.endRefreshing()
             }
         })
@@ -58,6 +62,7 @@ class ListGameViewController: CustomViewController
             if let error = error
             {
                 print("-->> Error get more games [VC]: \(error)")
+                self.present(Alert.show(message: error.localizedDescription), animated: true, completion: nil)
             }
         })
     }

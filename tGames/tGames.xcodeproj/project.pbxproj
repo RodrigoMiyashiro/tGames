@@ -45,6 +45,9 @@
 		5B3A830E201D798700D77110 /* ListGameViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A830D201D798700D77110 /* ListGameViewModelTest.swift */; };
 		5B3A8310201D799400D77110 /* ListGameViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A830F201D799400D77110 /* ListGameViewControllerTest.swift */; };
 		5B3A8312201D79A900D77110 /* DetailGameViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A8311201D79A900D77110 /* DetailGameViewControllerTest.swift */; };
+		5B3A8315201D987900D77110 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A8314201D987900D77110 /* Spinner.swift */; };
+		5B3A8318201D9B3500D77110 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A8317201D9B3500D77110 /* Alert.swift */; };
+		5B3A831A201D9E0100D77110 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A8319201D9E0100D77110 /* UIColor.swift */; };
 		802C937360AB706C9946FA30 /* Pods_tGames.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9DEC615B536CB22A1287E6 /* Pods_tGames.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +111,9 @@
 		5B3A830D201D798700D77110 /* ListGameViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGameViewModelTest.swift; sourceTree = "<group>"; };
 		5B3A830F201D799400D77110 /* ListGameViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGameViewControllerTest.swift; sourceTree = "<group>"; };
 		5B3A8311201D79A900D77110 /* DetailGameViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameViewControllerTest.swift; sourceTree = "<group>"; };
+		5B3A8314201D987900D77110 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		5B3A8317201D9B3500D77110 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		5B3A8319201D9E0100D77110 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		778B779D864A94E55893309D /* Pods-tGamesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tGamesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tGamesUITests/Pods-tGamesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		78ABDE167A48F9B60D2029FD /* Pods-tGames.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tGames.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tGames/Pods-tGames.debug.xcconfig"; sourceTree = "<group>"; };
 		7A9F2E51EA2F7D0B687619D6 /* Pods-tGamesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tGamesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tGamesUITests/Pods-tGamesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -259,6 +265,7 @@
 			children = (
 				5B3A8309201D0ADA00D77110 /* UIViewController.swift */,
 				5B3A830B201D0AEB00D77110 /* UIImage+Kingfisher.swift */,
+				5B3A8319201D9E0100D77110 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -291,6 +298,8 @@
 				5B3A82D4201CE37400D77110 /* Enum */,
 				5B3A82D3201CE37200D77110 /* URL */,
 				5B3A82D9201CE69C00D77110 /* Error Control */,
+				5B3A8316201D9B2500D77110 /* Spinner */,
+				5B3A8313201D983D00D77110 /* Alert */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -373,6 +382,22 @@
 				5B3A82FF201D000400D77110 /* CustomViewController.swift */,
 			);
 			path = "Custom View Controller";
+			sourceTree = "<group>";
+		};
+		5B3A8313201D983D00D77110 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				5B3A8317201D9B3500D77110 /* Alert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		5B3A8316201D9B2500D77110 /* Spinner */ = {
+			isa = PBXGroup;
+			children = (
+				5B3A8314201D987900D77110 /* Spinner.swift */,
+			);
+			path = Spinner;
 			sourceTree = "<group>";
 		};
 		740786507A2CD42AFE0BF6AC /* Pods */ = {
@@ -705,8 +730,11 @@
 				5B3A82DB201CE6AA00D77110 /* ErrorManager.swift in Sources */,
 				5B3A82D2201CE34C00D77110 /* APIManager.swift in Sources */,
 				5B3A82D6201CE3C200D77110 /* GeneratorURL.swift in Sources */,
+				5B3A8318201D9B3500D77110 /* Alert.swift in Sources */,
 				5B3A82E8201CEEC700D77110 /* GameViewerChannel.swift in Sources */,
+				5B3A831A201D9E0100D77110 /* UIColor.swift in Sources */,
 				5B3A830C201D0AEB00D77110 /* UIImage+Kingfisher.swift in Sources */,
+				5B3A8315201D987900D77110 /* Spinner.swift in Sources */,
 				5B3A82ED201CF10400D77110 /* Protocols.swift in Sources */,
 				5B3A82D8201CE47000D77110 /* Enum.swift in Sources */,
 				5B3A82E1201CE8D000D77110 /* Link.swift in Sources */,
