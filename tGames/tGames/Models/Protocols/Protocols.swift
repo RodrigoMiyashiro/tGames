@@ -13,3 +13,9 @@ protocol ListControl
 {
     func parseJSON(arrayJson: [JSON])
 }
+
+
+protocol ListProtocol: class
+{
+    func numberOfRows() -> Int
+}

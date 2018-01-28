@@ -46,3 +46,13 @@ enum ErrorType
     case unknown
     case alamofire
 }
+
+enum CellIdentifier: String
+{
+    case listGame = "listGameCell"
+}
+
+enum Segue: String
+{
+    case detailGame = "gameDetailSegue"
+}
