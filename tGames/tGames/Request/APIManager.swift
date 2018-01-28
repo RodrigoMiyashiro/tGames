@@ -12,9 +12,8 @@ import SwiftyJSON
 // MARK: - Token Manager
 class GamesManager: NSObject
 {
-    static func getGames(completion: @escaping(ListGame?, Error?) -> Void)
+    static func getGames(withURL url: String, completion: @escaping(ListGame?, Error?) -> Void)
     {
-        let url = GenerateURL.get(type: .games)
         let header = [HeaderRequest.clienteID.rawValue : ClientID.value.rawValue]
         
         Request.getFrom(url, headers: header) { (result) in
