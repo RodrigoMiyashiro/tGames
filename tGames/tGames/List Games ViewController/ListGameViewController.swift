@@ -29,6 +29,7 @@ class ListGameViewController: CustomViewController
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.configTitle(title: "tGames")
         listGameViewModel = ListGameViewModel()
         getGames()
     }
@@ -106,7 +107,7 @@ extension ListGameViewController: UICollectionViewDelegateFlowLayout
         if self.view.frame.size.width > 375.0 { heightCtr = heightCtr - 30 }
         else if self.view.frame.size.width > 320.0 { heightCtr = heightCtr - 20 }
         
-        let height = heightCtr * 1.45
+        let height = heightCtr * 1.55
         
         return CGSize(width: width, height: height)
     }

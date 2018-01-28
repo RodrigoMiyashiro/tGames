@@ -14,26 +14,31 @@ class DetailGameViewController: CustomViewController
     var gameViewerChannel = GameViewerChannel()
     
     // MARK: - IBOutlets
+    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var gameTopImage: UIImageView!
+    @IBOutlet weak var nameGameLabel: UILabel!
+    @IBOutlet weak var channelsCountLabel: UILabel!
+    @IBOutlet weak var viewersCountLabel: UILabel!
     
     
     // MARK: - Life Cycle
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         print("-->> Game: \(gameViewerChannel.game.name)")
+        setDetailGame()
     }
 
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func setDetailGame()
+    {
+        self.configTitle(title: gameViewerChannel.game.name)
+        
+        backgroundImage.download(image: gameViewerChannel.game.box.large)
+        gameTopImage.download(image: gameViewerChannel.game.logo.large)
+        nameGameLabel.text = gameViewerChannel.game.name
+        channelsCountLabel.text = String(gameViewerChannel.channels)
+        viewersCountLabel.text = String(gameViewerChannel.viewers)
     }
-    */
-
 }
