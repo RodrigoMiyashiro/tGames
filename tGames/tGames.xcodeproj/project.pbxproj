@@ -36,6 +36,13 @@
 		5B3A82F9201CF7AC00D77110 /* APIManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A82F8201CF7AC00D77110 /* APIManagerTest.swift */; };
 		5B3A82FB201CF7CE00D77110 /* GeneratorURLTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A82FA201CF7CE00D77110 /* GeneratorURLTest.swift */; };
 		5B3A82FD201CF7EA00D77110 /* ErrorManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A82FC201CF7EA00D77110 /* ErrorManagerTest.swift */; };
+		5B3A8300201D000400D77110 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A82FF201D000400D77110 /* CustomViewController.swift */; };
+		5B3A8302201D00BA00D77110 /* ListGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A8301201D00BA00D77110 /* ListGameViewController.swift */; };
+		5B3A8304201D00D400D77110 /* DetailGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A8303201D00D400D77110 /* DetailGameViewController.swift */; };
+		5B3A8306201D014400D77110 /* ListGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A8305201D014400D77110 /* ListGameCollectionViewCell.swift */; };
+		5B3A8308201D01D200D77110 /* ListGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A8307201D01D200D77110 /* ListGameViewModel.swift */; };
+		5B3A830A201D0ADA00D77110 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A8309201D0ADA00D77110 /* UIViewController.swift */; };
+		5B3A830C201D0AEB00D77110 /* UIImage+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A830B201D0AEB00D77110 /* UIImage+Kingfisher.swift */; };
 		802C937360AB706C9946FA30 /* Pods_tGames.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9DEC615B536CB22A1287E6 /* Pods_tGames.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +97,13 @@
 		5B3A82F8201CF7AC00D77110 /* APIManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTest.swift; sourceTree = "<group>"; };
 		5B3A82FA201CF7CE00D77110 /* GeneratorURLTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorURLTest.swift; sourceTree = "<group>"; };
 		5B3A82FC201CF7EA00D77110 /* ErrorManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManagerTest.swift; sourceTree = "<group>"; };
+		5B3A82FF201D000400D77110 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		5B3A8301201D00BA00D77110 /* ListGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGameViewController.swift; sourceTree = "<group>"; };
+		5B3A8303201D00D400D77110 /* DetailGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameViewController.swift; sourceTree = "<group>"; };
+		5B3A8305201D014400D77110 /* ListGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGameCollectionViewCell.swift; sourceTree = "<group>"; };
+		5B3A8307201D01D200D77110 /* ListGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGameViewModel.swift; sourceTree = "<group>"; };
+		5B3A8309201D0ADA00D77110 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		5B3A830B201D0AEB00D77110 /* UIImage+Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Kingfisher.swift"; sourceTree = "<group>"; };
 		778B779D864A94E55893309D /* Pods-tGamesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tGamesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tGamesUITests/Pods-tGamesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		78ABDE167A48F9B60D2029FD /* Pods-tGames.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tGames.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tGames/Pods-tGames.debug.xcconfig"; sourceTree = "<group>"; };
 		7A9F2E51EA2F7D0B687619D6 /* Pods-tGamesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tGamesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tGamesUITests/Pods-tGamesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +183,7 @@
 				5B3A82CC201CE2EE00D77110 /* Models */,
 				5B3A82CB201CE2E800D77110 /* Extensions */,
 				5B3A82CA201CE2E600D77110 /* ViewModels */,
+				5B3A82FE201CFFF600D77110 /* Custom View Controller */,
 				5B3A82C9201CE2E100D77110 /* List Games ViewController */,
 				5B3A82C8201CE2DE00D77110 /* Detail Game ViewController */,
 				5B3A8295201C3D0200D77110 /* AppDelegate.swift */,
@@ -211,6 +226,7 @@
 		5B3A82C8201CE2DE00D77110 /* Detail Game ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5B3A8303201D00D400D77110 /* DetailGameViewController.swift */,
 			);
 			path = "Detail Game ViewController";
 			sourceTree = "<group>";
@@ -218,6 +234,8 @@
 		5B3A82C9201CE2E100D77110 /* List Games ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5B3A8301201D00BA00D77110 /* ListGameViewController.swift */,
+				5B3A8305201D014400D77110 /* ListGameCollectionViewCell.swift */,
 			);
 			path = "List Games ViewController";
 			sourceTree = "<group>";
@@ -225,6 +243,7 @@
 		5B3A82CA201CE2E600D77110 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				5B3A8307201D01D200D77110 /* ListGameViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -232,6 +251,8 @@
 		5B3A82CB201CE2E800D77110 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5B3A8309201D0ADA00D77110 /* UIViewController.swift */,
+				5B3A830B201D0AEB00D77110 /* UIImage+Kingfisher.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -338,6 +359,14 @@
 				5B3A82EC201CF10400D77110 /* Protocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		5B3A82FE201CFFF600D77110 /* Custom View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5B3A82FF201D000400D77110 /* CustomViewController.swift */,
+			);
+			path = "Custom View Controller";
 			sourceTree = "<group>";
 		};
 		740786507A2CD42AFE0BF6AC /* Pods */ = {
@@ -664,14 +693,21 @@
 				5B3A82E6201CEAAD00D77110 /* ElementImage.swift in Sources */,
 				5B3A82E3201CE9D700D77110 /* Game.swift in Sources */,
 				5B3A82EA201CF04100D77110 /* ListGame.swift in Sources */,
+				5B3A8304201D00D400D77110 /* DetailGameViewController.swift in Sources */,
 				5B3A82D0201CE32F00D77110 /* Request.swift in Sources */,
 				5B3A82DB201CE6AA00D77110 /* ErrorManager.swift in Sources */,
 				5B3A82D2201CE34C00D77110 /* APIManager.swift in Sources */,
 				5B3A82D6201CE3C200D77110 /* GeneratorURL.swift in Sources */,
 				5B3A82E8201CEEC700D77110 /* GameViewerChannel.swift in Sources */,
+				5B3A830C201D0AEB00D77110 /* UIImage+Kingfisher.swift in Sources */,
 				5B3A82ED201CF10400D77110 /* Protocols.swift in Sources */,
 				5B3A82D8201CE47000D77110 /* Enum.swift in Sources */,
 				5B3A82E1201CE8D000D77110 /* Link.swift in Sources */,
+				5B3A8302201D00BA00D77110 /* ListGameViewController.swift in Sources */,
+				5B3A830A201D0ADA00D77110 /* UIViewController.swift in Sources */,
+				5B3A8306201D014400D77110 /* ListGameCollectionViewCell.swift in Sources */,
+				5B3A8308201D01D200D77110 /* ListGameViewModel.swift in Sources */,
+				5B3A8300201D000400D77110 /* CustomViewController.swift in Sources */,
 				5B3A829E201C3D0200D77110 /* tGames.xcdatamodeld in Sources */,
 				5B3A8296201C3D0200D77110 /* AppDelegate.swift in Sources */,
 			);
@@ -784,7 +820,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -835,7 +871,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
