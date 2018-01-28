@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import UIScrollView_InfiniteScroll
 
 class ListGameViewController: CustomViewController
 {
     // MARK: - Lets and Vars
+    var refreshControl: UIRefreshControl!
     var listGameViewModel: ListGameViewModel?
     {
         didSet
         {
             listGameViewModel?.listGameDidChange = { [weak self] viewModel in
+                self?.refreshControl.endRefreshing()
                 self?.listGameCollectionView.reloadData()
             }
         }
@@ -32,20 +35,56 @@ class ListGameViewController: CustomViewController
         self.configTitle(title: "tGames")
         listGameViewModel = ListGameViewModel()
         getGames()
+        
+        configPullToRefresh()
+        infinityScroll()
     }
-
     
-    private func getGames()
+    
+    @objc private func getGames()
     {
         listGameViewModel?.getGames(completion: { (error) in
             if let error = error
             {
                 print("-->> Error get games [VC]: \(error)")
+                self.refreshControl.endRefreshing()
             }
         })
     }
     
+    private func addMoreGames(withURL url: String)
+    {
+        listGameViewModel?.add(withURL: url, completion: { (error) in
+            if let error = error
+            {
+                print("-->> Error get more games [VC]: \(error)")
+            }
+        })
+    }
+    
+    private func infinityScroll()
+    {
+        listGameCollectionView.addInfiniteScroll { (collectionView) in
+            collectionView.performBatchUpdates({
+                let nextURL = self.listGameViewModel?.listGames?.links.next ?? ""
+                self.addMoreGames(withURL: nextURL)
+                collectionView.finishInfiniteScroll()
+            }, completion: { (finished) in
 
+            })
+        }
+    }
+    
+    private func configPullToRefresh()
+    {
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(getGames), for: UIControlEvents.valueChanged)
+        listGameCollectionView.addSubview(refreshControl)
+    }
+    
+    
+    
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
@@ -97,9 +136,6 @@ extension ListGameViewController: UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-//        var width = collectionView.frame.width/2 - 32
-//        var height = collectionView.frame.height
-        
         let space = self.view.frame.size.width > 400 ? 34 : 26
         let width = (self.view.frame.size.width - CGFloat(space)) / 2
         var heightCtr = width + 10

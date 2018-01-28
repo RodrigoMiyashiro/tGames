@@ -9,6 +9,7 @@ target 'tGames' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Kingfisher'
+  pod 'UIScrollView-InfiniteScroll'
 
   target 'tGamesTests' do
     inherit! :search_paths

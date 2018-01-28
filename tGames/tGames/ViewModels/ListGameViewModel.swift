@@ -14,7 +14,7 @@ protocol ListGameViewModelProtocol: ListProtocol
     var listGameDidChange: ((ListGameViewModelProtocol) -> Void)? { get set }
     
     init()
-    func add(games list: ListGame)
+    func add(withURL url: String, completion: @escaping(Error?) -> Void)
     func getGames(completion: @escaping(Error?) -> Void)
 }
 
@@ -37,14 +37,6 @@ class ListGameViewModel: ListGameViewModelProtocol
         listGames = ListGame()
     }
     
-    
-    func add(games list: ListGame)
-    {
-        listGames?.games += list.games
-        listGames?.links = list.links
-    }
-    
-    
     func numberOfRows() -> Int
     {
         return listGames?.games.count ?? 0
@@ -55,10 +47,30 @@ extension ListGameViewModel
 {
     func getGames(completion: @escaping (Error?) -> Void)
     {
-        GamesManager.getGames { (games, error) in
+        let urlInitialRequest = GenerateURL.get(type: .games)
+        GamesManager.getGames(withURL: urlInitialRequest) { (games, error) in
             if let list = games
             {
                 self.listGames = list
+            }
+            if let error = error
+            {
+                completion(error)
+            }
+        }
+    }
+    
+    
+    func add(withURL url: String, completion: @escaping (Error?) -> Void)
+    {
+        GamesManager.getGames(withURL: url) { (games, error) in
+            if let list = games
+            {
+                let tempList = self.listGames
+                tempList?.links = list.links
+                tempList?.games += list.games
+                
+                self.listGames = tempList
             }
             if let error = error
             {
