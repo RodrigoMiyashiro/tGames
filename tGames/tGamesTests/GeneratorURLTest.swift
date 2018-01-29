@@ -16,6 +16,21 @@ class GeneratorURLTest: QuickSpec
 {
     override func spec()
     {
-        
+        describe("Generate of URL")
+        {
+            let url = GenerateURL.get(type: TypeURL.games)
+            context("after being property initialized with a url")
+            {
+                it("should have a string")
+                {
+                    expect(url).notTo(beNil())
+                }
+                
+                it("should have a url to start initial request")
+                {
+                    expect(url).to(equal("https://api.twitch.tv/kraken/games/top"))
+                }
+            }
+        }
     }
 }
