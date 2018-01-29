@@ -21,6 +21,12 @@ class Link: NSObject
         next = ""
     }
     
+    init(current: String, next: String)
+    {
+        self.current = current
+        self.next = next
+    }
+    
     init(dataJSON: JSON)
     {
         current = dataJSON["self"].stringValue

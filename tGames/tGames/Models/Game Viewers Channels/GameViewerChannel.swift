@@ -22,6 +22,13 @@ class GameViewerChannel: NSObject
         channels = 0
     }
     
+    init(game: Game, viewers: Int, channels: Int)
+    {
+        self.game = game
+        self.viewers = viewers
+        self.channels = channels
+    }
+    
     required init(dataJSON: JSON)
     {
         game = Game(dataJSON: dataJSON["game"])

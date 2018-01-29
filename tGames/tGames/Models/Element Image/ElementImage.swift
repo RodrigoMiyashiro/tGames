@@ -24,6 +24,14 @@ class ElementImage: NSObject
         template = ""
     }
     
+    init(large: String, medium: String, small: String, template: String)
+    {
+        self.large = large
+        self.medium = medium
+        self.small = small
+        self.template = template
+    }
+    
     required init(dataJSON: JSON)
     {
         large = dataJSON["large"].stringValue

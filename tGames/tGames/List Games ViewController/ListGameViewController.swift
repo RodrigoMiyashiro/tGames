@@ -20,6 +20,7 @@ class ListGameViewController: CustomViewController
             listGameViewModel?.listGameDidChange = { [weak self] viewModel in
                 self?.refreshControl.endRefreshing()
                 self?.listGameCollectionView.reloadData()
+                let _ = LoadData().loadData()
                 Spinner.stopAnimating()
             }
         }

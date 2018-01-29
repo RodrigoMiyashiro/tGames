@@ -22,6 +22,13 @@ class ListGame: NSObject
         games = [GameViewerChannel]()
     }
     
+    init(total: Int, links: Link, games: [GameViewerChannel])
+    {
+        self.total = total
+        self.links = links
+        self.games = games
+    }
+    
     required convenience init(dataJSON: JSON)
     {
         self.init()

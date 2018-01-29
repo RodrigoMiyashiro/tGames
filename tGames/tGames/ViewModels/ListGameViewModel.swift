@@ -51,10 +51,13 @@ extension ListGameViewModel
         GamesManager.getGames(withURL: urlInitialRequest) { (games, error) in
             if let list = games
             {
+                DeleteData().ListGameDB()
+                SaveData().listGameDB(list: list)
                 self.listGames = list
             }
             if let error = error
             {
+                self.listGames = LoadData().loadData()
                 completion(error)
             }
         }
@@ -70,6 +73,7 @@ extension ListGameViewModel
                 tempList?.links = list.links
                 tempList?.games += list.games
                 
+                SaveData().listGameDB(list: tempList!)
                 self.listGames = tempList
             }
             if let error = error

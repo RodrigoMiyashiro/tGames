@@ -30,6 +30,17 @@ class Game: NSObject
         localizedName = ""
     }
     
+    init(name: String, popularity: Int, id: Int, giantbombID: Int, box: ElementImage, logo: ElementImage, localizedName: String)
+    {
+        self.name = name
+        self.popularity = popularity
+        self.id = id
+        self.giantbombID = giantbombID
+        self.box = box
+        self.logo = logo
+        self.localizedName = localizedName
+    }
+    
     required init(dataJSON: JSON)
     {
         name = dataJSON["name"].stringValue
